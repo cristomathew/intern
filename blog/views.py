@@ -18,6 +18,9 @@ def home(request):
     }
     return render(request, 'blog/home.html', context)
 
+def mainview(request):
+    return render(request, 'blog/index.html',{'title': 'Welcome'})
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'

@@ -9,7 +9,8 @@ from .views import (
     )
 from . import views
 urlpatterns = [
-    path('', PostListView.as_view(), name='blog-home'),
+    path('',views.mainview, name='blog-main'),
+    path('news/', PostListView.as_view(), name='blog-home'),
     path('user/<str:username>/', UserPostListView.as_view(), name='user-post'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
